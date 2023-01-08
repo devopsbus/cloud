@@ -1,4 +1,4 @@
-FROM Centos:latest
+FROM centos:latest
 MAINTAINER rajak.ehs@gmail.com
 RUN cd /etc/yum.repos.d/
 RUN sed -i 's/mirrorlist/#mirrorlist/g' /etc/yum.repos.d/CentOS-*
@@ -7,10 +7,10 @@ RUN yum -y install java
 RUN yum install -y httpd \
     zip \
  unzip
-ADD https://www.free-css.com/assets/files/free-css-templates/download/page247/kindle.zip /var/www/html/
+ADD https://www.free-css.com/assets/files/free-css-templates/download/page251/greatseo.zip /var/www/html/
 WORKDIR /var/www/html
-RUN unzip kindle.zip
-RUN cp -rvf markups-kindle/* .
-RUN rm -rf _MACOSX markupd-kindle kindle.zip 
-CMD ["/usr/sbin/httpd",  "-D", "FOREGROUND"]
+RUN unzip greatseo.zip
+RUN cp -rvf greatseo/* .
+RUN rm -rf greatseo.zip greatseo 
+CMD ["/usr/sbin/httpd",  "-D",  "FOREGROUND"]
 EXPOSE 80
